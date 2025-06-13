@@ -294,6 +294,128 @@
             color: #2980b9;
         }
 
+        /* Awards Section */
+        .awards {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .awards::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+            animation: sparkle 15s linear infinite;
+        }
+
+        @keyframes sparkle {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(20px); }
+        }
+
+        .awards .section-title {
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .awards .section-title::after {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .award-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .award-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+            border-radius: 22px;
+            z-index: -1;
+        }
+
+        .award-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .award-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .award-card:nth-child(2) .award-icon {
+            animation-delay: 0.5s;
+        }
+
+        .award-card:nth-child(3) .award-icon {
+            animation-delay: 1s;
+        }
+
+        .award-card:nth-child(4) .award-icon {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .award-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .award-organization {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .award-year {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .award-description {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
         /* Blog Section */
         .blog {
             background: rgba(255, 255, 255, 0.9);
@@ -519,6 +641,29 @@
                     <p class="book-genre">Contemporary Fiction</p>
                     <p class="book-description"></p>
                     <a href="#" class="book-link">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards" class="awards">
+        <div class="container">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <span class="award-icon">🏆</span>
+                    <h3 class="award-title">3rd Place Hopwood Award</h3>
+                    <p class="award-organization">Hopwood Awards Program, University of Michigan</p>
+                    <p class="award-year">2025</p>
+                    <p class="award-description">Awarded to students “who perform the best creative work in the fields of dramatic writing, fiction, poetry, and the essay.”</p>
+                </div>
+                
+                <div class="award-card">
+                    <span class="award-icon">📚</span>
+                    <h3 class="award-title">Virginia Voss Memorial Award</h3>
+                    <p class="award-organization">Literature, Science, and the Arts Honors Program</p>
+                    <p class="award-year">2025</p>
+                    <p class="award-description"> For excellence in writing by senior Honors women.</p>
                 </div>
             </div>
         </div>
